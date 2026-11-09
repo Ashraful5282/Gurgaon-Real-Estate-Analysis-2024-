@@ -61,10 +61,10 @@ else:
     print(f"Non-RERA-approved properties command a price premium with an average price of {rera_not_approved_avg_price/10000000:.2f} Crores compared to RERA-approved properties with an average price of {rera_approved_avg_price/10000000:.2f} Crores.")
 
 
-# #Q6. How does area (sqft) impact property price?
-# sns = sns.scatterplot(data=df, x='area', y='price')
-# plt.title('Area vs Price')
-# # #plt.show()
+#Q6. How does area (sqft) impact property price?
+sns = sns.scatterplot(data=df, x='area', y='price')
+plt.title('Area vs Price')
+plt.show()
 
 #Q7. Which BHK configuration is the most expensive on per square foot basis?
 bhk_avg_rate = df.groupby('bhk_count')['rate_per_sqft'].mean().idxmax()
@@ -83,6 +83,6 @@ for builder, rate in top_5_builders.items():
 
 
 # #Q10. Are larger homes always more expensive per square foot?
-# sns.scatterplot(data=df, x='area', y='rate_per_sqft')
-# plt.title('Area vs Rate per Square Foot')
-# plt.show()
+sns.scatterplot(data=df, x='area', y='rate_per_sqft')
+plt.title('Area vs Rate per Square Foot')
+plt.show()
